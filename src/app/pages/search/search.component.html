@@ -1,0 +1,6 @@
+<script src="https://kit.fontawesome.com/5eea2cd9cd.js" crossorigin="anonymous"></script>
+<div>
+    <input type="text" #s placeholder="Search for food!!" (keyup.enter)="search(s.value)"
+    [value]="searchFood">
+    <button (click)="search(s.value)"><i class="fa-solid fa-magnifying-glass"></i></button>
+</div>
