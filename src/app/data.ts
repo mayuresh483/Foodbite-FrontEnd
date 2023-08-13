@@ -5,7 +5,7 @@ export const sample_foods:Food[] = [
     {
         id:'1',
         name:'cheese Pizza',
-        price:'120',
+        price:120,
         cookTime:'30-45',
         favorite:true,
         origins:['Italy'],
@@ -16,7 +16,7 @@ export const sample_foods:Food[] = [
     {
         id:'2',
         name:'Chinese Pizza',
-        price:'128',
+        price:128,
         cookTime:'20-45',
         favorite:false,
         origins:['Indian','Itialian'],

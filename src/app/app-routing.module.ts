@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { FooddetailsComponent } from './pages/fooddetails/fooddetails.component';
+import { AddtocartComponent } from './pages/addtocart/addtocart.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'search/:searchfood', component:HomeComponent},
   {path:'tag/:foodTag', component:HomeComponent},
   {path:'food/:id', component:FooddetailsComponent},
+  {path:'cart-page',component:AddtocartComponent}
 ];
 
 @NgModule({
