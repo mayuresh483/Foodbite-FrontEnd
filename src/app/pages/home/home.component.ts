@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FoodService } from 'src/app/services/food.service';
@@ -15,11 +16,23 @@ export class HomeComponent implements OnInit {
     
     activatedRoute.params.subscribe((params)=>{
       if(params['searchfood']){
-        this.foods= this.foodService.getFoodFromSearch(params['searchfood']);
+        this.foodService.getFoodFromSearch(params['searchfood']).subscribe((foods)=>{
+          this.foods= foods;
+        },(error:HttpErrorResponse)=>{
+          alert("Unable to get the Response");
+        });
       }else if(params['foodTag']){
-        this.foods = this.foodService.getAllFoodByTag(params['foodTag']);
+        this.foodService.getAllFoodByTag(params['foodTag']).subscribe((foods)=>{
+          this.foods= foods;
+        },(error:HttpErrorResponse)=>{
+          alert("Unable to get the Response");
+        });
       }else{
-        this.foods = foodService.getAll();
+        this.foodService.getAll().subscribe((foods)=>{
+          this.foods= foods;
+        },(error:HttpErrorResponse)=>{
+          alert("Unable to get the Response");
+        });
       }
     })
   }
