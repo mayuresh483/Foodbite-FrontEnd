@@ -3,18 +3,18 @@
         <a routerLink="/" class="logo">FoodBuddy</a>
         <nav>
             <ul>
-                <li>
+                <li *ngIf="!User.token">
                     <a routerLink="/login">Login</a>
                 </li>
-                <li class="menu-container">
-                    <a routerLink="/dashboard">Mayur</a>
+                <li *ngIf="User.token" class="menu-container">
+                    <a routerLink="/dashboard">{{User.name}}</a>
                     <div class="menu">
                         <a routerLink="/profile">Profiles</a>
                         <a routerLink="/orders">Orders</a>
-                        <a routerLink="/logout">Logout</a>
+                        <a (click)="logOut()">Logout</a>
                     </div>
                 </li>
-                <a routerLink="/cart-page">Cart <span>2</span></a>
+                <a routerLink="/cart-page"><i class="fa-solid fa-cart-shopping"></i><span>{{cartCount}}</span></a>
             </ul>
         </nav>
     </div>
