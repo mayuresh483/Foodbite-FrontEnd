@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FooddetailsComponent } from './pages/fooddetails/fooddetails.component';
 import { AddtocartComponent } from './pages/addtocart/addtocart.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path:'tag/:foodTag', component:HomeComponent},
   {path:'food/:id', component:FooddetailsComponent},
   {path:'cart-page',component:AddtocartComponent},
-  {path:'login',component: LoginComponent}
+  {path:'login',component: LoginComponent},
+  {path:'register',component: RegistrationComponent}
 ];
 
 @NgModule({

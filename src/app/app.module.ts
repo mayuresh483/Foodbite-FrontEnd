@@ -18,7 +18,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputContainerComponent } from './pages/input-container/input-container.component';
 import { InputValidationComponent } from './pages/input-validation/input-validation.component';
-import { DefaultButtonComponent } from './pages/default-button/default-button.component'
+import { DefaultButtonComponent } from './pages/default-button/default-button.component';
+import { RegistrationComponent } from './pages/registration/registration.component'
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { DefaultButtonComponent } from './pages/default-button/default-button.co
     InputContainerComponent,
     InputValidationComponent,
     DefaultButtonComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,

@@ -36,3 +36,9 @@ input:focus{
     border-width: 2.9px;
     border-color: green;
 }
+
+.register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
