@@ -3,27 +3,21 @@
         <app-title title="Login"></app-title>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="input-container">
-                <label>Email</label>
-                <div>
+                <app-input-container label="Email">
                     <input type="email" placeholder="Email" formControlName="email">
-                </div>
-                <div class="error-list" *ngIf="g.email.errors && isSubmitted">
-                    <div *ngIf="g.email.errors.required">Should Not be Empty</div>
-                    <div *ngIf="g.email.errors.email">Email is not in proper format</div>
-                </div>
+                </app-input-container>  
+                <app-input-validation [control] ='g.email' [showErrorsWhen]="isSubmitted">
+                </app-input-validation>             
             </div>
             <div class="input-container">
-                <label>Password</label>
-                <div>
+                <app-input-container label="Password">
                     <input type="password" placeholder="Password" formControlName="password">
-                </div>
-                <div class="error-list" *ngIf="g.password.errors && isSubmitted">
-                    <div *ngIf="g.password.errors.required">Should Not be Empty</div>
-                </div>
+                </app-input-container>  
+                <app-input-validation [control] ='g.password' [showErrorsWhen]="isSubmitted">
+                </app-input-validation>             
             </div>
-            <div class="button">
-                <button type="submit">Login</button>
-            </div>
+            <app-default-button text="Login">
+            </app-default-button>
         </form>
     </div>
 </div>
