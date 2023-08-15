@@ -13,7 +13,7 @@ export class TagsComponent implements OnInit{
   tags?:Tags[];
   constructor(private foodService:FoodService){
     this.foodService.getAllTags().subscribe((tags)=>{
-      this.tags = tags;
+            this.tags = tags;
     }, (error:HttpErrorResponse)=>{
       alert("Unable to fetch the tags");
     });

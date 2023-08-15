@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Food } from '../shared/models/Food';
-import { sample_foods, sample_tags } from '../data';
 import { Tags } from '../shared/models/Tags';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -30,7 +29,6 @@ export class FoodService {
   }
 
   getFoodById(id:string):Observable<Food>{
-    console.log("Food_BY_ID_URL + id"+ FOOD_BY_ID_URL + id);
     return this.http.get<Food>(FOOD_BY_ID_URL + id);
   }
 }
