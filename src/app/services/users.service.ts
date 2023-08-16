@@ -35,6 +35,10 @@ export class UsersService {
     );
   }
 
+  get currentUser():User{
+    return this.userSubject.value;
+  }
+
   logOutUser(){
     this.userSubject.next(new User());
     localStorage.removeItem('User');

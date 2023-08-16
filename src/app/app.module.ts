@@ -11,7 +11,7 @@ import { FooddetailsComponent } from './pages/fooddetails/fooddetails.component'
 import { AddtocartComponent } from './pages/addtocart/addtocart.component';
 import { TitleComponent } from './pages/title/title.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
@@ -19,7 +19,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputContainerComponent } from './pages/input-container/input-container.component';
 import { InputValidationComponent } from './pages/input-validation/input-validation.component';
 import { DefaultButtonComponent } from './pages/default-button/default-button.component';
-import { RegistrationComponent } from './pages/registration/registration.component'
+import { RegistrationComponent } from './pages/registration/registration.component';
+import { LoadingComponent } from './pages/loading/loading.component'
+import { InterceptorsInterceptor } from './interceptor/interceptors.interceptor';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { OrderlistComponent } from './pages/orderlist/orderlist.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,9 @@ import { RegistrationComponent } from './pages/registration/registration.compone
     InputValidationComponent,
     DefaultButtonComponent,
     RegistrationComponent,
+    LoadingComponent,
+    CheckoutComponent,
+    OrderlistComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +57,9 @@ import { RegistrationComponent } from './pages/registration/registration.compone
       newestOnTop:false
     }),
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,useClass:InterceptorsInterceptor,multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

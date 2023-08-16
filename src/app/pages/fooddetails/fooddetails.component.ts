@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { FoodService } from 'src/app/services/food.service';
-import { Food } from 'src/app/shared/models/Food';
 
 @Component({
   selector: 'app-fooddetails',
@@ -16,7 +15,6 @@ export class FooddetailsComponent {
   constructor(activatedRoute:ActivatedRoute, private foodService:FoodService, 
     private cartService: CartService, private router:Router){
     activatedRoute.params.subscribe((params)=>{
-    console.log(params['id']);
       if(params['id']!=null){
         this.foodService.getFoodById(params['id']).subscribe((food)=>{
             this.food = food;
