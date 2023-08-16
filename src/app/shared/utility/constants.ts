@@ -7,3 +7,7 @@ export const SEARCH_TAG_URL = BASE_URL + '/api/foods/tags/';
 export const FOOD_BY_ID_URL = BASE_URL + '/api/foods/';
 export const USER_LOGIN_URL = BASE_URL + '/api/users/auth';
 export const USER_REGISTRATION_URL = BASE_URL + '/api/users/register';
+
+export const ORDER_URL = BASE_URL + '/api/orders';
+export const ORDER_CREATE_URL = BASE_URL + '/api/orders/create';
+

@@ -24,6 +24,8 @@ import { LoadingComponent } from './pages/loading/loading.component'
 import { InterceptorsInterceptor } from './interceptor/interceptors.interceptor';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { OrderlistComponent } from './pages/orderlist/orderlist.component';
+import { MapComponent } from './pages/map/map.component';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { OrderlistComponent } from './pages/orderlist/orderlist.component';
     LoadingComponent,
     CheckoutComponent,
     OrderlistComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,9 +60,10 @@ import { OrderlistComponent } from './pages/orderlist/orderlist.component';
       newestOnTop:false
     }),
   ],
-  providers: [{
-    provide:HTTP_INTERCEPTORS,useClass:InterceptorsInterceptor,multi:true
-  }],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:InterceptorsInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

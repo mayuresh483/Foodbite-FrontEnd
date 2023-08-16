@@ -46,6 +46,7 @@ a span{
 
 .menu-container{
     position: relative;
+    z-index: 10000;
 }
 
 .menu{

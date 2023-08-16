@@ -1,7 +1,7 @@
 <div class="container"> 
     <div class="content">
         <app-title title="Order" fontSize="1.6rem"></app-title>
-        <form [formGroup]="checkoutForm" (ngSubmit)="createOrder()">
+        <form [formGroup]="checkoutForm">
             <app-input-container label="Name">
                 <input type="text" placeholder="Name" formControlName="name">
             </app-input-container>
@@ -16,10 +16,11 @@
     </div>
     <div class="map">
         <app-title title="Choose Your Address on Map" fontSize="1.6rem"></app-title>
+        <app-map [order]="order"></app-map>
     </div>
     <div class="button-container">
         <div class="buttons">
-            <button type="submit">Checkout To Payment</button>
+            <button (click)="createOrder()">Checkout To Payment</button>
         </div>
     </div>
 </div>
