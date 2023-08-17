@@ -26,6 +26,8 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { OrderlistComponent } from './pages/orderlist/orderlist.component';
 import { MapComponent } from './pages/map/map.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { PaymentComponent } from './pages/payment/payment.component';
+import { PaypalButtonComponent } from './pages/paypal-button/paypal-button.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
     CheckoutComponent,
     OrderlistComponent,
     MapComponent,
+    PaymentComponent,
+    PaypalButtonComponent,
   ],
   imports: [
     BrowserModule,
